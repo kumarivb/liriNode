@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kumarivb/liriNode/issues"
   },
-  "homepage": "https://github.com/kumarivb/liriNode#readme"
+  "homepage": "https://github.com/kumarivb/liriNode#readme",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
 }
