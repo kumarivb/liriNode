@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kumarivb/liriNode#readme",
   "dependencies": {
+    "node-spotify-api": "^1.0.7",
     "twitter": "^1.7.1"
   }
 }
