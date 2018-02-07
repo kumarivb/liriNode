@@ -7,6 +7,9 @@ var Twitter = require('twitter');
 // make http calls
 var request = require('request');
 
+//  File System module
+var fs = require('fs');
+
 // add the code required to import the `keys.js` file and store it in a variable
 var keys = require("./keys.js");
 
@@ -78,7 +81,21 @@ var sOmdb = function(movieName) {
     });
 };
 
-// user input
+// do-what-it-says function, looked this up, wasn't sure how to acheive it
+var doSay = function () {
+// copied from nodejs, fs package
+    fs.readFile('random.txt','utf8', function (err, data) {
+        if (err) throw err;
+        
+        var dataArr = data.split(',');
+        if (dataArr.length === 2) {
+                lCommand(dataArr[0], dataArr[1]);
+        } else if (dataArr === 1) {
+                lCommand(dataArr[0]);
+            }       
+    });
+};
+// user input, still need if else statements for a default movie and song if user doesn't input anything
 var lCommand = function(info, sInfo) {
     switch (info) {
         case 'my-tweets':
@@ -89,6 +106,9 @@ var lCommand = function(info, sInfo) {
             break;
         case 'movie-this':
             sOmdb(sInfo);
+            break;
+        case 'do-what-it-says':
+            doSay();
             break;
         default: 
             console.log("What was that? LIRI has no clue");
