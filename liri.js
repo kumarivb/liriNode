@@ -30,6 +30,15 @@ var myTs = function() {
         });
 };
 
+// copied from spotify nmp, want to display artist, song name, link, album, default to ace of base-the sign
+spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+    if (err) {
+      return console.log('Error occurred: ' + err);
+    }
+   
+  console.log(data.tracks.items[0]); 
+  });
+
 // user input
 var Tcommand = function(myTweets) {
     switch (myTweets) {
@@ -41,7 +50,7 @@ var Tcommand = function(myTweets) {
     }
 };
 
-// pass arguments into Tcommand, argv
+// pass arguments into Tcommand, remember to use argv
 var pass = function(itwo, ithree) {
     Tcommand(itwo, ithree);
 }
