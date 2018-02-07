@@ -57,12 +57,26 @@ var sSpotify = function(songName) {
     });
 };
 
+// function for omdb
+var sOmdb = function(movieName) {
+
 // copied from request npm
-request('http://www.omdbapi.com/?t=winner&apikey=trilogy', function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
+    request('http://www.omdbapi.com/?t=' + movieName + '&plot=short&tomatoes=true&apikey=trilogy', function (error, response, body) {
+        if (error) {    
+        return console.log('error:', error);
+        }
+
+        var movies = JSON.parse(body);
+            console.log("title: " + movies.Title);
+            console.log("release year: " + movies.Year);
+            console.log("IMDB rating: " + movies.imdbRating);
+            console.log("fresh or rotten: " + movies.tomatoRating);
+            console.log("production country: " + movies.Country);
+            console.log("language: " + movies.Language);
+            console.log("plot: " + movies.Plot);
+            console.log("actors: " + movies.Actors);
+    });
+};
 
 // user input
 var lCommand = function(info, sInfo) {
@@ -72,6 +86,9 @@ var lCommand = function(info, sInfo) {
             break;
         case 'spotify-this-song':
             sSpotify(sInfo);
+            break;
+        case 'movie-this':
+            sOmdb(sInfo);
             break;
         default: 
             console.log("What was that? LIRI has no clue");
