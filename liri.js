@@ -45,7 +45,11 @@ var sSpotify = function(songName) {
         }
     
         var songs = data.tracks.items;
-            for (var i = 0; i < songs.length; i++);
+            for (var i = 0; i < songs.length; i++) {
+                console.log(i);
+                console.log("artists: " + songs[i].artists.map(artists));
+            }
+
     });
 };
 
