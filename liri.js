@@ -34,9 +34,16 @@ var myTs = function() {
 var Tcommand = function(myTweets) {
     switch (myTweets) {
         case 'my-tweets':
-            getTweets();
+            myTs();
             break;
         default: 
             console.log("What was that? LIRI has no clue");
     }
 };
+
+// pass arguments into Tcommand, argv
+var pass = function(itwo, ithree) {
+    Tcommand(itwo, ithree);
+}
+
+pass(process.argv[2],process.argv[3]);
