@@ -30,20 +30,33 @@ var myTs = function() {
         });
 };
 
+// get artist name
+var artists = function(artist) {
+    return artist.name;
+}
+
+// function for spotify
+var sSpotify = function(songName) {
+
 // copied from spotify nmp, want to display artist, song name, link, album, default to ace of base-the sign
-spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    }
-   
-  console.log(data.tracks.items[0]); 
-  });
+    spotify.search({ type: 'track', query: songName }, function(err, data) {
+        if (err) {
+        return console.log('Error occurred: ' + err);
+        }
+    
+        var songs = data.tracks.items;
+            for (var i = 0; i < songs.length; i++);
+    });
+};
 
 // user input
-var Tcommand = function(myTweets) {
-    switch (myTweets) {
+var lCommand = function(info, sInfo) {
+    switch (info) {
         case 'my-tweets':
             myTs();
+            break;
+        case 'spotify-this-song':
+            sSpotify(sInfo);
             break;
         default: 
             console.log("What was that? LIRI has no clue");
@@ -52,7 +65,7 @@ var Tcommand = function(myTweets) {
 
 // pass arguments into Tcommand, remember to use argv
 var pass = function(itwo, ithree) {
-    Tcommand(itwo, ithree);
+    lCommand(itwo, ithree);
 }
 
 pass(process.argv[2],process.argv[3]);
