@@ -10,18 +10,33 @@ var request = require('request');
 // add the code required to import the `keys.js` file and store it in a variable
 var keys = require("./keys.js");
 
-// access your keys information
+// access keys information
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
+// function to get my tweets
+var myTs = function() {    
+
 // copied from twitter npm
-var params = {screen_name: 'noliloli'};
-    client.get('statuses/user_timeline', params, function(error, tweets, response) {
-        if (!error) {
-        // console.log(tweets);
-        for (var i = 0; i < tweets.length; i++) {
-            console.log(tweets[i].created_at);
-            console.log(tweets[i].text);
+    var params = {screen_name: 'noliloli'};
+        client.get('statuses/user_timeline', params, function(error, tweets, response) {
+            if (!error) {
+            // console.log(tweets);
+            for (var i = 0; i < tweets.length; i++) {
+                console.log(tweets[i].created_at);
+                console.log(tweets[i].text);
+                }
             }
-        }
-    });
+        });
+};
+
+// user input
+var Tcommand = function(myTweets) {
+    switch (myTweets) {
+        case 'my-tweets':
+            getTweets();
+            break;
+        default: 
+            console.log("What was that? LIRI has no clue");
+    }
+};
