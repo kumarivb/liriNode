@@ -47,9 +47,13 @@ var sSpotify = function(songName) {
         var songs = data.tracks.items;
             for (var i = 0; i < songs.length; i++) {
                 console.log(i);
+                // copied map, i wasn't sure how to use it
                 console.log("artists: " + songs[i].artists.map(artists));
+                console.log("song name: " + songs[i].name);
+                console.log("link: " + songs[i].preview_url);
+                console.log("album: " + songs[i].album.name);
+                console.log("\n-------------\n");
             }
-
     });
 };
 
