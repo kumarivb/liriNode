@@ -12,5 +12,16 @@ var keys = require("./keys.js");
 
 // access your keys information
 var spotify = new Spotify(keys.spotify);
-var twitter = new Twitter(keys.twitter);
- 
+var client = new Twitter(keys.twitter);
+
+// copied from twitter npm
+var params = {screen_name: 'noliloli'};
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+        if (!error) {
+        // console.log(tweets);
+        for (var i = 0; i < tweets.length; i++) {
+            console.log(tweets[i].created_at);
+            console.log(tweets[i].text);
+            }
+        }
+    });
