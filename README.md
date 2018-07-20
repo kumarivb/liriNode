@@ -1,5 +1,4 @@
-# Liri
-liri node app
+# Liri Node App
 
 ### Description
 Liri is a command line node app that takes information and returns data with specific commands.
