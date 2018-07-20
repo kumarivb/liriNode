@@ -1,34 +1,29 @@
 # Liri
 liri node app
 
-### What the project does
-<p>Liri is a command line node app that takes information and returns data with specific commands.</p>
+### Description
+Liri is a command line node app that takes information and returns data with specific commands.
 
 ### Commands
-<p>my-tweets</p>
-<p>spotify-this-song</p>
-<p>movie-this</p>
-<p>do-what-it-says</p>
+* my-tweets
+* spotify-this-song
+* movie-this
+* do-what-it-says
 
 ### Get started
-<p>type node liri.js spotify-this-song <song name><br /> 
-This gets information about about a specific song.<br />
-(What album the song is on)</p>
+Type node liri.js spotify-this-song "song name".<br /> 
+This gets information about about a specific song.
 
-<p>type node liri.js movie-this <movie name><br /> 
+Type node liri.js movie-this "movie name".<br /> 
 This gets information about a specific movie.<br />
-(IMDB rating)</p>
 
-<p>type node liri.js do-what-it-says<br />
-This takes the text from random.txt and runs the song through spotify-this-song command</p>
+Type node liri.js do-what-it-says<br />
+This takes the text from random.txt and runs the song through the spotify-this-song command.
 
-### Tech used
-<p>
-Node.js<br />
-Twitter NPM Package - https://www.npmjs.com/package/twitter<br />
-Spotify NPM Package - https://www.npmjs.com/package/spotify<br />
-Request NPM Package - https://www.npmjs.com/package/request<br />
-</p>
+### Technologies
+* Node.js
+* Twitter NPM Package - https://www.npmjs.com/package/twitter
+* Spotify NPM Package - https://www.npmjs.com/package/spotify
+* Request NPM Package - https://www.npmjs.com/package/request
 
-### Author
-<p>Kumari</p>
+https://kumarivb.github.io/liriNode/
